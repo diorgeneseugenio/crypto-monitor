@@ -13,28 +13,10 @@ module.exports = merge(common, {
         exclude: /node_modules/
       },
       {
-        test: /\.less$/i,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'less-loader',
-            options: {
-              lessOptions: {
-                modifyVars: {
-                  'primary-color': '#003a8c' /* blue-9 */,
-                  'btn-primary-bg': '@orange-6'
-                },
-                javascriptEnabled: true
-              }
-            }
-          }
-        ]
-      }]
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
   externals: {
     react: 'React',
